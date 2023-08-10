@@ -1,4 +1,5 @@
-import random, time
+import random
+import time
 from Live import checks
 
 COUNT = 3
