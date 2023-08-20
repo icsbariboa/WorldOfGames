@@ -2,6 +2,8 @@ from Live import load_game, welcome, confirm_choice
 from GuessGame import guess_game_play
 from MemoryGame import memory_game_play
 from CurrencyRouletteGame import currency_roulette_game_play
+from Score import add_score
+from Utils import screen_clear
 
 
 def game():
@@ -9,13 +11,26 @@ def game():
         game_name, game_difficulty = load_game()
 
         if game_name.lower() == "memory game":
-            print("win" if memory_game_play(game_difficulty) else "lose")
+            if memory_game_play(game_difficulty):
+                add_score(game_difficulty)
+                print("win")
+            else:
+                print("lose")
         if game_name.lower() == "guess game":
-            print("win" if guess_game_play(game_difficulty) else "lose")
+            if guess_game_play(game_difficulty):
+                add_score(game_difficulty)
+                print("win")
+            else:
+                print("lose")
         if game_name.lower() == "currency roulette":
-            print("win" if currency_roulette_game_play(game_difficulty) else "lose")
+            if currency_roulette_game_play(game_difficulty):
+                add_score(game_difficulty)
+                print("win")
+            else:
+                print("lose")
         print("Do you want to play another game? y/n")
         if not confirm_choice():
+            screen_clear()
             break
 
 
