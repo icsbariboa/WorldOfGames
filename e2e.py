@@ -1,4 +1,5 @@
 from selenium import webdriver
+from constants import ipaddress_score_server, port_score_server
 
 
 def test_scores_service(app_url):
@@ -9,7 +10,7 @@ def test_scores_service(app_url):
 
 
 def main_test():
-    if test_scores_service("http://localhost:5001/Score"):
+    if test_scores_service(f"http://{ipaddress_score_server}:{port_score_server}/Score"):
         return 0
     return -1
 

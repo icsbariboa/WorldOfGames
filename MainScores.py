@@ -1,11 +1,11 @@
 from flask import Flask, request, render_template
+from constants import ipaddress_score_server, port_score_server
 
 app = Flask("ScoreServer")
 
 
 @app.route('/Score', methods=['GET', 'POST'])
 def score_server():
-
     if request.method == 'GET':
         score_file = open("Scores.txt")
         current_score = score_file.read()
@@ -13,4 +13,4 @@ def score_server():
         return render_template("scores_page.html", current_score=current_score)
 
 
-app.run(host="0.0.0.0", port=5001, debug=False)
+app.run(host=ipaddress_score_server, port=port_score_server, debug=False)
