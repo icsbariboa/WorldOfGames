@@ -16,4 +16,4 @@ def main_test():
 
 
 if __name__ == "__main__":
-    print(main_test())
+    main_test()
