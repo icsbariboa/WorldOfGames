@@ -12,7 +12,7 @@ stage("Test"){
     if(Test_result.equals(-1){
         error "The test failed! score is not between 0 to 1000"
     }
-}
+)
 stage("Finalize"){
     sh "docker stop score_server1"
     sh "docker image push icsbariboa/score_server"
