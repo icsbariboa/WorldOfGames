@@ -9,7 +9,7 @@ stage("Run"){
 }
 stage("Test"){
     def Test_result = sh "python e2e.py"
-    if(Test_result = -1){
+    if(Test_result.equals(-1){
         error "The test failed! score is not between 0 to 1000"
     }
 }
