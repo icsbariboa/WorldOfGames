@@ -1,7 +1,8 @@
 FROM python:3
-WORKDIR /server
+ARG path=/server
+WORKDIR $path
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
-ADD MainScores.py /server
-ADD Scores.txt /server
-CMD ["python3", "/server/MainScores.py"]
+ADD MainScores.py $path
+ADD Scores.txt $path
+CMD ["python3", "./MainScores.py"]
