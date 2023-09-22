@@ -5,4 +5,4 @@ COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 ADD MainScores.py $path
 ADD Scores.txt $path
-CMD ["python3", "./MainScores.py"]
+CMD ["python3.exe", "$path/MainScores.py"]
