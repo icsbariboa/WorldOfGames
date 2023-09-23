@@ -14,7 +14,7 @@ def test_scores_service(app_url):
 
 
 def main_test():
-    if test_scores_service(f"http://{ipaddress_score_server}:{port_score_server}/Score"):
+    if test_scores_service(f"http://{ipaddress_score_server}:{port_score_server}/score"):
         return 0
     return -1
 

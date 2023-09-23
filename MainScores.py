@@ -4,7 +4,7 @@ from constants import ipaddress_score_server, port_score_server
 app = Flask("ScoreServer")
 
 
-@app.route('/Score', methods=['GET', 'POST'])
+@app.route('/score', methods=['GET', 'POST'])
 def score_server():
     if request.method == 'GET':
         score_file = open("Scores.txt")
