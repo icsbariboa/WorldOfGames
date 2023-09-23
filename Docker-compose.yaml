@@ -2,4 +2,4 @@ version: "3.3"
 services:
   score_server:
     build: https://github.com/icsbariboa/WorldOfGames/blob/master/Dockerfile.txt
-    image: icsbariboa/score_server
+    image: icsbariboa/score-server
