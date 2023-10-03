@@ -1,3 +1,4 @@
+properties([githubProjectProperty(displayName: '', projectUrlStr: 'https://github.com/icsbariboa/WorldOfGames/'), pipelineTriggers([githubPush()])])
 node("prod") {
     stage("Checkout"){
         checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/icsbariboa/WorldOfGames']])
